@@ -1,0 +1,39 @@
+<div class='container'>
+  <div class='panel panel-primary'>
+    <div class='panel-heading'><h5>{{title}}</h5></div>
+    <div class='panel-body'>
+     <!-- <div>
+        <form #f="ngForm" (ngSubmit)="onAddElementToInscrit(p)">
+          <label class="control-label">Cochez</label>
+          <input type="checkbox" name="selected" ngModel [(ngModel)]="p.selected">
+          <button>Inscrire</button>
+        </form>
+      </div>-->
+      <table  *ngIf="elements" class='table table-striped'>
+        <thead>
+        <tr>
+          <th>Nom de la formation</th><th>L'objectif</th><th>Description</th><th>L'ecole</th><th>Nombre limite</th><th>Duree</th><th>Le temps</th><th>Prix</th>
+        </tr>
+        </thead>
+        <thead>
+        <tr *ngFor="let p of elements._embedded.elementForms">
+          <td>{{p.name}}</td>
+          <td>{{p.objectif}}</td>
+          <td>{{p.description}}</td>
+          <td>{{p.schooleName}}</td>
+          <td>{{p.numberPlace}}</td>
+          <td>{{p.duree}}</td>
+          <td>{{p.time}}</td>
+          <td>{{p.price|number:'0.2'}}</td>
+          <td>
+            <button class="btn btn-success" type="submit" (click)="onInscrire(p)">Inscrire</button>
+          </td>
+            <!--<form #f="ngForm" (ngSubmit)="onAddElementToInscrit(p)">
+              <input type="checkbox" name="selected" ngModel [(ngModel)]="p.selected">
+            </form>-->
+        </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+</div>

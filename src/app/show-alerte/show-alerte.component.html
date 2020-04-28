@@ -1,0 +1,19 @@
+<div *ngIf="showalerte">
+  <div *ngFor="let p of showalerte._embedded.alerteMessages">
+    <div class="col-md-9 col-sm-6 col-xs-12">
+      <div class="panel panel-primary">
+        <div class="panel-heading">Message de confirmation</div>
+        <div class="panel-body">
+          <table>
+            <tr><th></th><td>{{p.message}}</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+

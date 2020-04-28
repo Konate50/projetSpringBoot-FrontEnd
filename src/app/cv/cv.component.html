@@ -1,0 +1,54 @@
+<div *ngIf="cvs">
+   <div *ngFor="let p of cvs._embedded.cVFormateurs">
+      <div class="col-md-6">
+        <div class="panel panel-primary">
+          <div class="panel-heading">CV De: {{p.name}}</div>
+          <div class="panel-body">
+           <table>
+            <tr><th><ul><li>Adresse :</li></ul></th><td>{{p.addrese}}</td></tr>
+             <tr><th><ul><li>Tel :</li></ul></th><td>{{p.tel}}</td></tr>
+             <tr><th><ul><li>Experiences</li></ul></th></tr>
+             <tr><td><ul><li>{{p.experiences}}</li></ul></td></tr>
+             <tr><th><ul><li>Competances</li></ul></th></tr>
+             <tr><td><ul><li>{{p.competences}}</li></ul></td></tr>
+             <tr><th><ul><li>Langues</li></ul></th></tr>
+             <tr><td><ul><li>{{p.langue}}</li></ul></td></tr>
+             <tr><th><ul><li>Divers</li></ul></th></tr>
+             <tr><td><ul><li>{{p.divers}}</li></ul></td></tr>
+             <tr><td>grate</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+   </div>
+</div>
+
+
+
+
+
+<!--<div class='container'>
+  <div class='panel panel-primaryt'>
+    <div class='panel-heading'>Liste des CVS</div>
+    <div class='panel-body'>
+      <table *ngIf="cvs" class='table table-striped'>
+        <thead>
+        <tr>
+          <th> Nom et Prenom</th><th>Adresse</th><th>Tel</th><th>Experiences</th><th>Competances</th><th>Langues</th><th>Divers</th>
+        </tr>
+        </thead>
+        <thead>
+        <tr *ngFor="let p of cvs._embedded.cVFormateurs">
+          <td>{{p.name}}</td>
+          <td>{{p.addrese}}</td>
+          <td>{{p.tel}}</td>
+          <td>{{p.experiences}}</td>
+          <td>{{p.competences}}</td>
+          <td>{{p.langue}}</td>
+          <td>{{p.divers}}</td>
+        </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+</div>-->

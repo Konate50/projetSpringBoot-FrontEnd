@@ -1,0 +1,24 @@
+<div class='container'>
+  <div class='panel panel-primary'>
+    <div class='panel-heading'>Liste des formateurs</div>
+
+    <div class='panel-body'>
+      <table *ngIf="formateurs" class='table table-striped'>
+        <thead>
+        <tr>
+          <th>Prenom</th><th>Nom</th><th>Email</th><th>Adresse</th>
+        </tr>
+        </thead>
+        <thead>
+        <tr *ngFor="let p of formateurs._embedded.formateurs">
+          <td>{{p.firstname}}</td>
+          <td>{{p.lastname }}</td>
+          <td>{{p.email }}</td>
+          <td>{{p.addres }}</td>
+        </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+</div>
+

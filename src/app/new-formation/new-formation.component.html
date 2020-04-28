@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="col-md-9 col-sm-6 col-xs-12">
+    <div class="panel panel-primary">
+      <div [hidden]="submitted" class="panel-heading">Create new Formation</div>
+      <div class="panel-body" *ngIf="mode == 1">
+        <form #f="ngForm" (ngSubmit)="onSaveFormation(f.value)">
+          <div class="form-group">
+            <label class="control-label"> Libellé</label>
+            <input class="form-control" type="text" name="libele" ngModel>
+          </div>
+          <div class="form-group">
+            <label class="control-label"> Nom d'école</label>
+            <input class="form-control" type="text" name="schooleName" ngModel>
+          </div>
+          <div class="form-group">
+            <label class="control-label"> Date</label>
+            <input class="form-control" type="text" name="date" ngModel>
+          </div>
+          <div class="form-group">
+            <label class="control-label"> Prix global</label>
+            <input class="form-control" type="number" name="prix" ngModel>
+          </div>
+          <button class="btn btn-success" type="submit" >Save</button>
+        </form>
+      </div>
+      <div [hidden]="!submitted">
+        <h4>You submitted succesfully!</h4>
+      </div>
+      <div class="panel-body" *ngIf="mode == 2">
+        <button class="btn btn-success" (click)="onNewFormation()">Nouvelle Formation</button>
+        <p> </p>
+        <div class="form-group">
+          <label>ID :</label>
+          <label>{{currentFormation.id}}</label>
+        </div>
+        <div class="form-group">
+          <label>Libellé :</label>
+          <label>{{currentFormation.libele}}</label>
+        </div> <div class="form-group">
+        <label>Lieu de Formation:</label>
+        <label>{{currentFormation.schooleName}}</label>
+      </div>
+        <div class="form-group">
+          <label>DATE :</label>
+          <label>{{currentFormation.date}}</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+

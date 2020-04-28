@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="col-md-9 col-sm-6 col-xs-12">
+    <div class="panel panel-primary">
+      <div  class="panel-heading">Veuillez évaluer les caracteristiques de la formation sur 10</div>
+      <div class="panel-body" *ngIf="mode == 1">
+       <form #f="ngForm" (ngSubmit)="onSaveEvaluation(f.value)">
+          <div class="form-group">
+            <label class="control-label">Etablissement</label>
+            <input class="form-control" type="text" placeholder="Note sur l'etat de l'etablissement d'accueil" name="etablissmant" [(ngModel)]="etablissmant">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </div>
+          <div class="form-group">
+            <label class="control-label">Formateur</label>
+            <input class="form-control" type="text" placeholder="Note sur le Formateur" name="formateur" [(ngModel)]="formateur">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </div>
+          <div class="form-group">
+            <label class="control-label">Contenu </label>
+            <input class="form-control" type="text" placeholder="Note sur le contenu de formation" name="contenu" [(ngModel)]="contenu">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </div>
+         <div class="form-group">
+           <label class="control-label">Cours</label>
+             <input class="form-control" type="text" placeholder="Ecrire le nom de la formation" name="cours" [(ngModel)]="cours">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         </div>
+         <div></div>
+          <div>
+            Your sum is {{result}}
+          </div>
+          <button class="btn btn-success" type="submit" (click)="AddNumber()" >Save</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

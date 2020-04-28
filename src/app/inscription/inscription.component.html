@@ -1,0 +1,30 @@
+<div class='container'>
+  <div class='panel panel-primary'>
+    <div class='panel-heading'>Liste des inscrits</div>
+
+    <div class='panel-body'>
+
+      <table *ngIf="inscriptions" class='table table-striped'>
+        <thead>
+        <tr>
+          <th>Nom d'element</th><th>ADRESSE</th><th>EMAIL</th><th>TEL</th>
+        </tr>
+        </thead>
+        <thead>
+        <tr *ngFor="let p of inscriptions._embedded.inscriptions">
+          <td>{{p.elementName}}</td>
+          <td>{{p.addrese}}</td>
+          <td>{{p.email}}</td>
+          <td>{{p.tel}}</td>
+        </tr>
+        </thead>
+      </table>
+      <ul *ngIf="pages" class="nav nav-pills">
+        <li class="clickable" [ngClass]="i==currentPage?'active':'' " *ngFor="let p of pages; let i=index">
+          <a (click)="onPageFormations(i)">{{i}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+

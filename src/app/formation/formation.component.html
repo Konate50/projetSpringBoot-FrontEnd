@@ -1,0 +1,47 @@
+<div class='container'>
+  <div class='panel panel-primary'>
+    <div class='panel-heading'>Liste des formations</div>
+
+    <div class='panel-body'>
+      <form #f="ngForm" (ngSubmit)="onChercher(f.value)" >
+          <div class="form-group" >
+            <label>Keyword</label>
+            <input type="text" name="keyword" ngModel>
+            <button type="submit" class="btn btn-primary">
+              <span class="glyphicon glyphicon-search"></span>
+              Chercher</button>
+          </div>
+      </form>
+      <table *ngIf="formations" class='table table-striped'>
+        <thead>
+        <tr>
+          <th>LIBELLE</th><th>ECOLE</th><th>DATE</th><th>PRIX GLOBAL</th><th>CV du Prof</th>
+          <div *ngIf="authService.isAdmin()">
+            <th>Actions</th>
+          </div>
+        </tr>
+        </thead>
+        <thead>
+        <tr *ngFor="let p of formations._embedded.formations">
+          <td [ngClass]="currentFormation==p?'active':''" class="clickable"><a (click)="getElementByForm(p)" >{{p.libele}}</a></td>
+          <td>{{p.schooleName }}</td>
+          <td>{{p.date }}</td>
+          <td>{{p.price }}</td>
+          <td><a class="clickable" (click)="onCvByFormateur(p)">Ici</a></td>
+        <!-- a ajouter les methode de edit et delete-->
+          <div *ngIf="authService.isAdmin()">
+            <td><a class="btn btn-danger" (click)="onDeleteForms(p)">Delete</a></td>
+            <td><a class="btn btn-success" (click)="onEditForms(p)">Edit</a></td>
+          </div>
+        </tr>
+        </thead>
+      </table>
+      <ul *ngIf="pages" class="nav nav-pills">
+        <li class="clickable" [ngClass]="i==currentPage?'active':'' " *ngFor="let p of pages; let i=index">
+          <a (click)="onPageFormations(i)">{{i}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+

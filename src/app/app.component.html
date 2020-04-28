@@ -1,0 +1,40 @@
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Formation</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a routerLink="/formations"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+      <div *ngIf="authService.isAdmin()">
+      <li  class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Formation <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a class="clickable" (click)="onDefinedPlan()">creer une formation</a></li>
+          <li><a class="clickable" (click)="onDefinedElement()">creer un element de formation</a></li>
+          <li><a class="clickable" (click)="onDefinedCv()">Creer un CV</a></li>
+          <li><a class="clickable" (click)="onDefinedInscrits()">Consulter les inscrits</a></li>
+        </ul>
+      </li>
+      </div>
+      <li><a href="#">Nos Formations</a></li>
+      <li><a routerLink="/formations">Chercher</a></li>
+      <li><a routerLink="/evaluate">Evaluer la formation</a></li>
+      <li><a href="/showalertes">Alerte Confirmation </a></li>
+
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a class="btn" (click)="onLogout()"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+
+</nav>
+
+  <router-outlet>
+
+  </router-outlet>
+
+
+
+
+

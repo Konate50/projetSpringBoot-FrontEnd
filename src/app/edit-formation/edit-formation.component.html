@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="col-md-9 col-sm-6 col-xs-12">
+    <div class="panel panel-primary">
+      <div class="panel-heading">Edit Formation</div>
+      <div class="panel-body" *ngIf="currentFormation">
+        <form #f="ngForm" (ngSubmit)="onUpdateFormation(f.value)">
+          <div class="form-group">
+            <label class="control-label"> Libellé</label>
+            <input class="form-control" type="text" name="libele" ngModel [(ngModel)]="currentFormation.libele">
+          </div>
+          <div class="form-group">
+            <label class="control-label"> Nom d'école</label>
+            <input class="form-control" type="text" name="schooleName" ngModel [(ngModel)]="currentFormation.schooleName">
+          </div>
+          <div class="form-group">
+            <label class="control-label"> Date</label>
+            <input class="form-control" type="text" name="date" ngModel [(ngModel)]="currentFormation.date">
+          </div>
+          <!-- <div class="form-group">
+             <label class="control-label"> formateur_id</label>
+             <input class="form-control" type="number" name="formateur_id" ngModel [(ngModel)]="currentFormation.formateur" >
+           </div>-->
+          <button class="btn btn-success" type="submit" >Update</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
